@@ -9,10 +9,11 @@ namespace MsTestProject
     [TestClass]
     public class UnitTest1
     {
+        private string url = Environment.GetEnvironmentVariable("testUrl");
+
         [TestMethod]
         public void TestMethod1()
         {
-            var url = Environment.GetEnvironmentVariable("testUrl");
             AqualityServices.Browser.GoTo(url);
             AqualityServices.Browser.Maximize();
 
@@ -30,9 +31,8 @@ namespace MsTestProject
         [TestMethod]
         public void TestMethod2()
         {
-            var currentUrl = Environment.GetEnvironmentVariable("testUrl");
             string expectedUrl = "https://www.a1qa.by/";
-            Assert.AreEqual(expectedUrl, currentUrl, "Links don't match");
+            Assert.AreEqual(expectedUrl, url, "Links don't match");
         }
     }
 }
