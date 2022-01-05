@@ -12,7 +12,7 @@ namespace MsTestProject
         [TestMethod]
         public void TestMethod1()
         {
-            var url = Environment.GetEnvironmentVariable("url");
+            var url = Environment.GetEnvironmentVariable("testUrl");
             AqualityServices.Browser.GoTo(url);
             AqualityServices.Browser.Maximize();
 
@@ -30,7 +30,7 @@ namespace MsTestProject
         [TestMethod]
         public void TestMethod2()
         {
-            var currentUrl = Environment.GetEnvironmentVariable("url");
+            var currentUrl = Environment.GetEnvironmentVariable("testUrl");
             string expectedUrl = "https://www.a1qa.by/";
             Assert.AreEqual(expectedUrl, currentUrl, "Links don't match");
         }
