@@ -41,5 +41,18 @@ namespace MsTestProject
             string expectedUrl = "https://www.a1qa.by/";
             Assert.AreEqual(expectedUrl, url, "Links don't match");
         }
+
+        [TestMethod]
+        [Ignore("Ignore this test")]
+        public void IgnoreTest()
+        {
+            Assert.IsTrue(true, "Not true");
+        }
+
+        [TestMethod]
+        public void FailTest()
+        {
+            Assert.Fail("Test failed");
+        }
     }
 }
