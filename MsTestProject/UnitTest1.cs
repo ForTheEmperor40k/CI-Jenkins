@@ -16,13 +16,20 @@ namespace MsTestProject
         {
             AqualityServices.Browser.GoTo(url);
             AqualityServices.Browser.Maximize();
+            string path = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\") + 
+                @"Screenshots\");
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
             byte[] image = AqualityServices.Browser.GetScreenshot();
             using (var memory = new MemoryStream(image))
             {
                 Image imageIn = Image.FromStream(memory);
                 Bitmap bmp = new Bitmap(imageIn);
-                bmp.Save(memory, System.Drawing.Imaging.ImageFormat.Png);
+                bmp.Save(path + "1.png", System.Drawing.Imaging.ImageFormat.Png);
             }
 
             AqualityServices.Browser.Quit();
