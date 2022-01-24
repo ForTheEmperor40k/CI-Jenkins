@@ -1,5 +1,7 @@
 using Aquality.Selenium.Browsers;
+using Aquality.Selenium.Core.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MsTestProject.Models;
 using System;
 using System.Drawing;
 using System.IO;
@@ -10,6 +12,9 @@ namespace MsTestProject
     public class UnitTest1
     {
         private string url = Environment.GetEnvironmentVariable("testUrl");
+
+        private JsonSettingsFile fileJson;
+        private TestDataModel testData = new TestDataModel();
 
         [TestMethod]
         public void TestMethod1()
@@ -53,6 +58,12 @@ namespace MsTestProject
         public void FailTest()
         {
             Assert.Fail("Test failed");
+        }
+
+        [TestMethod]
+        public void GetDataTest()
+        {
+
         }
     }
 }
