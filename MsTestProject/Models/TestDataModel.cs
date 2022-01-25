@@ -4,15 +4,14 @@ using System.Reflection;
 
 namespace MsTestProject.Models
 {
-    public static class TestDataModel
+    public class TestDataModel
     {
         private const string PathToConfigFile = @"Resources.TestData.json";
 
-        private static ISettingsFile settingsFile = new JsonSettingsFile(PathToConfigFile, Assembly.GetCallingAssembly());
+        private ISettingsFile settingsFile = new JsonSettingsFile(PathToConfigFile, Assembly.GetCallingAssembly());
 
-        public static string Login => settingsFile.GetValue<string>("login");
+        public string Login => settingsFile.GetValue<string>(".login");
 
-        public static string Password => settingsFile.GetValue<string>("password");
-
+        public string Password => settingsFile.GetValue<string>(".password");
     }
 }

@@ -13,6 +13,8 @@ namespace MsTestProject
     {
         private string url = Environment.GetEnvironmentVariable("testUrl");
 
+        private TestDataModel testData = new TestDataModel();
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -63,8 +65,8 @@ namespace MsTestProject
             const string login = "mail@mail.com";
             const string password = "qwerty123";
 
-            Assert.AreEqual(login, TestDataModel.Login, $"Logins do not match. Was -{TestDataModel.Login}");
-            Assert.AreEqual(password, TestDataModel.Password, $"Logins do not match. Was -{TestDataModel.Password}");
+            Assert.AreEqual(login, testData.Login, $"Logins do not match. Was -{testData.Login}");
+            Assert.AreEqual(password, testData.Password, $"Logins do not match. Was -{testData.Password}");
         }
     }
 }
