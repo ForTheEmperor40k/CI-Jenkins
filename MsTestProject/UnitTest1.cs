@@ -12,8 +12,6 @@ namespace MsTestProject
     public class UnitTest1
     {
         private string url = Environment.GetEnvironmentVariable("testUrl");
-        private string login = Environment.GetEnvironmentVariable("login");
-        private string password = Environment.GetEnvironmentVariable("password");
 
         //[TestMethod]
         //public void TestMethod1()
@@ -62,8 +60,8 @@ namespace MsTestProject
         [TestMethod]
         public void GetDataTest()
         {
-            //const string login = "mail@mail.com";
-            //const string password = "qwerty123";
+            const string login = "mail@mail.com";
+            const string password = "qwerty123";
 
             Assert.AreEqual(login, TestDataModel.Login, $"Logins do not match. Was -{TestDataModel.Login}");
             Assert.AreEqual(password, TestDataModel.Password, $"Logins do not match. Was -{TestDataModel.Password}");
