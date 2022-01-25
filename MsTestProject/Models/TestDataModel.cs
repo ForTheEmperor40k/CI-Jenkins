@@ -10,7 +10,9 @@ namespace MsTestProject.Models
 
         private static ISettingsFile settingsFile = new JsonSettingsFile(PathToConfigFile, Assembly.GetCallingAssembly());
 
-        public static string Password => settingsFile.GetValue<string>("Password");
-        public static string Login => settingsFile.GetValue<string>("Login");
+        public static string Login => settingsFile.GetValue<string>("login");
+
+        public static string Password => settingsFile.GetValue<string>("password");
+
     }
 }
