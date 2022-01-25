@@ -1,8 +1,14 @@
-﻿namespace MsTestProject.Models
+﻿using Aquality.Selenium.Core.Configurations;
+using Aquality.Selenium.Core.Utilities;
+using System.Reflection;
+
+namespace MsTestProject.Models
 {
     public class TestDataModel
     {
-        public string Login { get; set; }
-        public string Password { get; set; }
+        private ISettingsFile settingsFile = new JsonSettingsFile(@"Resources\TestData.json", Assembly.GetCallingAssembly());
+
+        public string Password => settingsFile.GetValue<string>("Password");
+        public string Login => settingsFile.GetValue<string>("Login");
     }
 }

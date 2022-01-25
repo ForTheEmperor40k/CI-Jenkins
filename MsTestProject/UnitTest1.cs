@@ -63,7 +63,11 @@ namespace MsTestProject
         [TestMethod]
         public void GetDataTest()
         {
+            const string login = "mail@mail.com";
+            const string password = "qwerty123";
 
+            Assert.IsTrue(login.Contains(testData.Login), $"Logins do not match. But was -{testData.Login}");
+            Assert.IsTrue(password.Contains(testData.Password), $"Passwords do not match. But was -{testData.Password}");
         }
     }
 }
