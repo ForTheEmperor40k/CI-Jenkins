@@ -6,7 +6,9 @@ namespace MsTestProject.Models
 {
     public static class TestDataModel
     {
-        private static ISettingsFile settingsFile = new JsonSettingsFile(@"\Resources\TestData.json", Assembly.GetCallingAssembly());
+        private const string PathToConfigFile = @"Resources.TestData.json";
+
+        private static ISettingsFile settingsFile = new JsonSettingsFile(PathToConfigFile, Assembly.GetCallingAssembly());
 
         public static string Password => settingsFile.GetValue<string>("Password");
         public static string Login => settingsFile.GetValue<string>("Login");
