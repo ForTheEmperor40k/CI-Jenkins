@@ -13,9 +13,6 @@ namespace MsTestProject
     {
         private string url = Environment.GetEnvironmentVariable("testUrl");
 
-        private JsonSettingsFile fileJson;
-        private TestDataModel testData = new TestDataModel();
-
         [TestMethod]
         public void TestMethod1()
         {
@@ -66,8 +63,8 @@ namespace MsTestProject
             const string login = "mail@mail.com";
             const string password = "qwerty123";
 
-            Assert.IsTrue(login.Contains(testData.Login), $"Logins do not match. But was -{testData.Login}");
-            Assert.IsTrue(password.Contains(testData.Password), $"Passwords do not match. But was -{testData.Password}");
+            Assert.IsTrue(login.Contains(TestDataModel.Login), $"Logins do not match. But was -{TestDataModel.Login}");
+            Assert.IsTrue(password.Contains(TestDataModel.Password), $"Passwords do not match. But was -{TestDataModel.Password}");
         }
     }
 }
